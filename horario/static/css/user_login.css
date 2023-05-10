@@ -1,0 +1,154 @@
+/* Estilos login */
+:root{
+    --color1:#0b0633;
+    --color2: #e3f6f5;
+    --color3:  #ff4949;
+    --color4:#ffffff;
+    --color5:black;
+    --color6: whitesmoke;
+    --color7: #A72AAB;
+    --title-font:font-family();
+}
+body{
+    width:95vw;
+    height: 95vh;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:20% 60% 20%;
+    background-color: var(--color6);
+}
+
+#formulario_login{
+    width:100%;
+    height:85%;
+    grid-row:2/3;
+    grid-column:2/3;
+    display:grid;
+    grid-template-columns:repeat(3,33%);
+    grid-template-rows:repeat(5,1fr);
+    background-color: var(--color4);
+    border-style:solid;
+    border-radius:5px; 
+    border-width: 1px;
+    border-color:var(--color4);
+    overflow: hidden;
+}
+
+/* Ubicación de elementos en el formulario */
+/* titulo app */
+.contenedor_titulo_app{
+    grid-row:1/2;
+    grid-column:1/4;
+    width:120%;
+    height:60px;
+    display:grid;
+    background-color: var(--color1);
+    
+}
+
+#titulo_app{
+    font-family:monospace;
+    color:var(--color6);
+    justify-self:center;
+    font-size:x-large;
+    font-weight: 200;
+    padding-right:20%;
+    padding-top:1%;
+    
+}
+
+/* username */
+.username_container{
+    grid-column: 1/4;
+    grid-row:2/3;
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    width:90%;
+    margin-left:3%;
+    margin-right:3%;
+    margin-top: 3%;
+}
+
+#username_input{
+    grid-row:2/3;
+    width:100%;
+    height:20px;
+}
+
+#username_label{
+    grid-row:1/2;
+    font-size:large;
+    font-weight: 200;
+    font-family: monospace;
+}
+
+
+/* password */
+.password_container{
+    grid-column: 1/4;
+    grid-row:3/4;
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    width:90%;
+    margin-left:3%;
+    margin-right:3%;
+    margin-top: 3%;
+}
+
+#password_input{
+    grid-row:2/3;
+    width:100%;
+    height:20px;
+}
+
+#password_label{
+    grid-row:1/2;
+    font-size:large;
+    font-weight: 200;
+    font-family: monospace;
+
+}
+
+/* login_button y link registro*/
+.contenedor_submit_link_registro{
+
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    grid-column: 1/4;
+    grid-row:4/5;
+    margin-left:3%;
+    margin-right:3%;
+    margin-top: 3%;
+}
+#login_input_submit{
+    grid-row:1/2;
+    width:20%;
+    height:30px;
+    justify-self: center;
+    font-size:medium;
+    font-weight: 200;
+    font-family: monospace;
+    background-color: var(--color1);
+    color:var(--color4);
+    border-radius:6px;
+}
+
+#login_input_submit:hover{
+    background-color: var(--color4);
+    color:var(--color1);
+}
+
+#link_registro{
+    grid-row:2/3;  
+    justify-self: center;
+    text-decoration:none;
+    padding-top: 5%;
+    color:var(--color1);
+    font-size:medium;
+    font-weight: 200;
+    font-family: monospace;
+}
+
+#link_registro:hover{
+    color:var(--color7);
+}

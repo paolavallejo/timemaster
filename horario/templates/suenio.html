@@ -1,0 +1,59 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h1>Horario sueño</h1>
+{% comment %} links petición horarios  {% endcomment %}
+<div class="contenedor_links_horario">
+    
+    <div class="contenedor_link_suenio">
+        <a href="{% url 'suenio' %}">1</a>
+    </div>
+
+    <div class="contenedor_link_actividades_fijas">
+        <a href="{% url 'actividades_fijas' %}">2</a>
+    </div>
+    
+    <div class="contenedor_link_actividades_no_fijas">
+        <a href="{% url 'actividades_no_fijas' %}">3</a>
+    </div>
+
+</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="horas_suenio">¿Cuántas horas semanalmente deseas dormir?</label>
+    <input type="number" name="horas_suenio" id="horas_suenio" min="1" max="75" step="1" required>
+
+    <label for="hora_maxima_levantar">¿A qué hora máximo te deseas levantar?</label>
+    <input type="number" name="hora_maxima_levantar" id="hora_maxima_levantar" min="1" max="24" step="1" required>
+
+    <label for="hora_maxima_acostar">¿A qué hora máximo te deseas acostar?</label>
+    <input type="number" name="hora_maxima_acostar" id="hora_maxima_acostar" min="1" max="24" step="1" required>
+
+    <label for="longitud_maxima_suenio">Longitud máxima de sueño</label>
+    <input type="number" name="longitud_maxima_suenio" id="longitud_maxima_suenio" min="1" max="12" step="1" required>
+
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+
+{% comment %} Se despliegan actividades creadas  {% endcomment %}
+
+<div class="contenedor_actividades">
+    {% if horario_suenio %}
+        <h1 class="titulo_tus_actividades">Tus horario de sueño es:</h1>
+        {% for horario in horario_suenio %}
+            <div class="caja_actividad">
+                <p>{{horario.name}}</p>
+                <p>id: {{horario.pk}}</p>
+                <a href="{% url 'eliminar_suenio' ruta_suenio=horario.pk %}">❌</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

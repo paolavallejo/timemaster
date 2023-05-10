@@ -1,0 +1,155 @@
+/* Estilos register */
+/* Variables */
+:root{
+    --color1:#0b0633;
+    --color2: #e3f6f5;
+    --color3:  #ff4949;
+    --color4:#ffffff;
+    --color5:black;
+    --color6: whitesmoke;
+    --color7: #A72AAB;
+    --color8: #3578E5;
+}
+
+/* Cuerpo */
+#register_body{
+    width:95vw;
+    height: 170vh;
+    display:grid;
+    grid-template-columns:32% 35% 32%;
+    grid-template-rows:5% 85% 10%;
+    background-color: var(--color6);
+}
+
+/* Formulario "contenedor" */
+#formulario_register{
+    width:100%;
+    height:75%;
+    grid-row:2/3;
+    grid-column:2/3;
+    display:grid;
+    background-color: var(--color4);
+    border-style:solid;
+    border-radius:5px; 
+    border-width: 1px;
+    border-color:var(--color4);
+    overflow: hidden;
+    padding:0;
+    margin:0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Titulo de app */
+#contenedor_titulo_app{
+    width:100%;
+    height:100%;
+    background-color:var(--color1);
+    display:grid;
+    
+}
+#titulo_app{
+    color:var(--color4);
+    justify-self:center;
+    font-family:monospace;
+}
+
+#register_input_submit{
+    width:20%;
+    height:30px;
+    justify-self: center;
+    font-size:medium;
+    font-weight: 200;
+    font-family: monospace;
+    background-color: var(--color1);
+    color:var(--color4);
+    border-radius:6px;
+    margin-right:13%;
+}
+
+#register_input_submit:hover{
+    background-color: var(--color4);
+    color:var(--color1);
+}
+
+/* Estilos en general */
+span{
+    font-family:monospace;
+    padding-left:3%;
+    padding-right:3%;
+    margin:0%;
+    color:var(--color8)
+}
+
+label{
+    font-family:monospace;
+    font-size:large;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top: 3%;
+    padding-bottom: 0;
+    margin:0;
+
+
+}
+
+li{
+    list-style:decimal;
+    font-family:monospace;
+    padding:0;
+    margin:0;
+    padding-left:3%;
+    padding-right:3%;
+    
+}
+
+ul{
+    margin-left:3%;
+    margin-right:3%;
+    padding-left:3%;
+    padding-right:3%;
+}
+input{
+    margin-left:3%;
+    margin-right:3%;
+    margin-top:0;
+    width:80%;
+    height:20px;
+}
+
+br{
+    padding:0%;
+    margin:0%;
+    width:0;
+    height:0;
+    display: none;
+}
+
+a{ 
+    justify-self:center;
+    text-decoration:none;
+    padding-top: 3%;
+    padding-right:10%;
+    color:var(--color1);
+    font-size:medium;
+    font-weight: 200;
+    font-family: monospace;
+}
+
+a:hover{
+    color:var(--color7);
+}
+
+.messages{
+    font-size:medium;
+    font-weight: 200;
+    font-family: monospace;
+    
+}
+
+.messages_container{
+    background-color:var(--color4);
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

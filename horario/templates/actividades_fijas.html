@@ -1,0 +1,68 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Actividades fijas</h1>
+{% comment %} links petición horarios  {% endcomment %}
+<div class="contenedor_links_horario">
+    
+    <div class="contenedor_link_suenio">
+        <a href="{% url 'suenio' %}">1</a>
+    </div>
+
+    <div class="contenedor_link_actividades_fijas">
+        <a href="{% url 'actividades_fijas' %}">2</a>
+    </div>
+    
+    <div class="contenedor_link_actividades_no_fijas">
+        <a href="{% url 'actividades_no_fijas' %}">3</a>
+    </div>
+
+</div>
+
+{% comment %} Formulario actividades fijas  {% endcomment %}
+<form action="" method="POST">
+
+    {% csrf_token %}
+    <label for="name">Nombre</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="dia_actividad">Día actividad</label>
+    <select name="dia_actividad" id="dia_actividad" required>
+        <option value="0">lunes</option>
+        <option value="1">martes</option>
+        <option value="2">miércoles</option>
+        <option value="3">jueves</option>
+        <option value="4">viernes</option>
+        <option value="5">sábado</option>
+        <option value="6">domingo</option>
+    </select>
+
+
+    <label for="hora_actividad">Hora actividad (entre 1,24)</label>
+    <input type="number" name="hora_actividad" id="hora_actividad" min="1" max="24" step="1" required>
+
+    <label for="duracion_actividad">Duración actividad</label>
+    <input type="number" name="duracion_actividad" id="duracion_actividad" min="1" max="10" step="1" required>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+
+{% comment %} Se despliegan actividades creadas  {% endcomment %}
+
+<div class="contenedor_actividades">
+    {% if actividades_fijas %}
+        <h1 class="titulo_tus_actividades">Tus actividades fijas:</h1>
+        {% for actividad in actividades_fijas %}
+            <div class="caja_actividad">
+                <p>{{actividad.name}}</p>
+                <p>id: {{actividad.pk}}</p>
+                <a href="{% url 'eliminar_actividades_fijas' ruta_actividad_fija=actividad.pk %}">❌</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock  %}

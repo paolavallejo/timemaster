@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/user_register.css' %}">
+    <title>register</title>
+</head>
+<body id="register_body">
+    {% if request.user.is_authenticated == False %}
+    
+        
+        <form id="formulario_register" method="POST" action="">
+            <div id="contenedor_titulo_app">
+                <h1 id="titulo_app">TIMEMASTER</h1>
+            </div>
+            {% csrf_token %}
+            {{UserCreationForm}}
+            <input id="register_input_submit" type="submit" value="Register">
+            <a href="{% url 'user_login' %}">¿Ya tienes una cuenta?</a>
+        </form>
+    
+    
+    {% else %}
+    <p>Ya tienes un inicio de sesión</p>
+    {% endif %}
+</body>
+</html>
